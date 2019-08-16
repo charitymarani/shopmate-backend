@@ -6,11 +6,23 @@ module.exports = {
             autoIncrement: true,
             type: Sequelize.INTEGER,
         },
-        age: {
-            type: Sequelize.INTEGER,
+        fullname: {
+            type: Sequelize.STRING,
             allowNull: false
         },
-        name: {
+        username: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        email: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        role: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        password: {
             type: Sequelize.STRING,
             allowNull: false
         },
