@@ -1,12 +1,18 @@
+import bcrypt from 'bcrypt';
 import models from '../../database/models';
+import Error from '../../helpers/Error';
 
 export default class UsersController {
     static async addUser(req, res) {
-        const {name, age} = req.body;
+        const { fullname, username, email, role, password } = req.body;
+        const hash = await bcrypt.hash(password, 10, null);
         try {
             const createUser = await models.User.create({
-                name,
-                age
+                fullname,
+                username,
+                email,
+                role,
+                password: hash
             });
             return res.status(201).json({
                 success: true,
@@ -15,7 +21,7 @@ export default class UsersController {
             });
         } catch (error) {
             /* istanbul ignore next */
-           console.log('An error occured')
+            Error.handleError(error, 500, res);
         }
     }
 }

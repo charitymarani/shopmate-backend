@@ -39,7 +39,7 @@ app.use(morgan('dev'));
 app.use(passport.initialize());
 
 
-// CloudinaryDeletion.executeResourceDelete();
+//
 // body parser for url params and json
 app.use(
     bodyParser.urlencoded({
