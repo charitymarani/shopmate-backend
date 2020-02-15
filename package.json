@@ -62,7 +62,7 @@
     "sequelize": "^5.10.1",
     "shortid": "^2.2.13",
     "socket.io": "^2.1.1",
-    "yarn": "^1.17.3"
+    "yarn": "^1.22.0"
   },
   "jest": {
     "collectCoverage": true,
